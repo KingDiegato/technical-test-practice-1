@@ -1,4 +1,4 @@
-const API_KEY = import.meta.VITE_API_KEY
+const API_KEY = import.meta.env.VITE_API_KEY_MOVIES
 const API_URL = 'http://www.omdbapi.com/'
 
 export const searchMovies = async ({ search }) => {
@@ -10,7 +10,7 @@ export const searchMovies = async ({ search }) => {
 
     const movies = json.Search
 
-    return movies?.map(movie => ({
+    return movies?.map((movie) => ({
       id: movie.imdbID,
       title: movie.Title,
       poster: movie.Poster,
