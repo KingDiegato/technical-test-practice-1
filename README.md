@@ -21,3 +21,9 @@ https://omdbapi.com/?apikey=d47b17db&s=Avengers
 - Evitar que se haga la misma búsqueda dos veces seguidas.
 - Haz que la búsqueda se haga automáticamente al escribir.
 - Evita que se haga la búsqueda continuamente al escribir.
+
+## CSS Framework Classless:
+
+I used Water as a Framework Classless for this practice.
+
+> https://watercss.kognise.dev
