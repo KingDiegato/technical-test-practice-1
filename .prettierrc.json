@@ -1,5 +1,20 @@
 {
   "semi": false,
   "trailingComma": "none",
-  "singleQuote": true
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "overrides": [
+    {
+      "files": "*.test.js",
+      "options": {
+        "semi": true
+      }
+    },
+    {
+      "files": "*.jsx",
+      "options": {
+        "singleQuote": true
+      }
+    }
+  ]
 }

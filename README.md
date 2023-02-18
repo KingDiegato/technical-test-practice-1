@@ -2,12 +2,13 @@
 
 ## Enunciado
 
-- api key = d47b17db
+- api key = import.meta.env.VITE_API_KEY_MOVIES
 
 > api to use: https://omdbapi.com
 > endpoint: http://www.omdbapi.com/?apikey=[yourkey]&s=${parameter}
 
 https://omdbapi.com/?apikey=d47b17db&s=Avengers
+
 ### Requerimientos:
 
 - Necesita mostar un input para buscar la película y un botón para buscar 🆗

@@ -2,8 +2,7 @@
 import { useCallback, useRef, useState } from 'react'
 import './App.css'
 import { Movies } from './components/listOfMovies'
-import { useMovies } from './hooks/useMovies'
-import { useSearch } from './hooks/useSearch'
+import { useMovies, useSearch } from './hooks/index'
 import debounce from 'just-debounce-it'
 
 function App() {
@@ -13,9 +12,11 @@ function App() {
   const inputRef = useRef()
 
   const debouncedGetMovies = useCallback(
-    debounce(search => {
+    debounce((search) => {
       getMovies({ search })
-    }, 500), [])
+    }, 500),
+    []
+  )
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -35,10 +36,15 @@ function App() {
   return (
     <div className='page'>
       <header>
-
         <h1>Buscador de películas:</h1>
         <form className='form' onSubmit={handleSubmit}>
-          <input value={search} onChange={handleChange} name='query' ref={inputRef} placeholder='Avengers, Matrix, Balto' />
+          <input
+            value={search}
+            onChange={handleChange}
+            name='query'
+            ref={inputRef}
+            placeholder='Avengers, Matrix, Balto'
+          />
 
           <input type='checkbox' onChange={handleSort} />
 
@@ -47,11 +53,7 @@ function App() {
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </header>
 
-      <main>
-        {
-          loading ? <p>loading...</p> : <Movies movies={movies} />
-        }
-      </main>
+      <main>{loading ? <p>loading...</p> : <Movies movies={movies} />}</main>
     </div>
   )
 }
