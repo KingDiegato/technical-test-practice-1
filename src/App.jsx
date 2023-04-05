@@ -4,6 +4,7 @@ import './App.css'
 import { Movies } from './components/listOfMovies'
 import { useMovies, useSearch } from './hooks/index'
 import debounce from 'just-debounce-it'
+import { placeholder } from './constants/placeholder'
 
 function App() {
   const { error, search, setSearch } = useSearch()
@@ -43,7 +44,7 @@ function App() {
             onChange={handleChange}
             name='query'
             ref={inputRef}
-            placeholder='Avengers, Matrix, Balto'
+            placeholder={placeholder}
           />
 
           <input type='checkbox' onChange={handleSort} />
